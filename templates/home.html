@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content%}
+    {% if lead %}
+    {% for l in lead %}
+    <div><a href="/api/{{l.id}}"> {{l.firstname}}</a></div>
+    
+    {% endfor %}
+    {% else %}
+    <p> no lead in record</p>
+
+    {% endif %}
+    <a href="{% url 'createlead' %}">create new lead</a>
+    {% endblock content%}

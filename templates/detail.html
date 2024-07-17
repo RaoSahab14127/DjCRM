@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content%}
+    {% if lead %}
+ 
+    <li>{{lead.firstname}}</li>
+    <li>{{lead.lastname}}</li>
+    <li>{{lead.age}}</li>
+    <li>{{lead.phoned}}</li>
+    <li>{{lead.source}}</li>
+    <a href="/api/update/{{lead.id}}/"> update</a>
+    <a href="/api/delete/{{lead.id}}/"> delete</a>
+    
+
+
+    {% else %}
+    <p> no lead in record</p>
+
+    {% endif %}
+    {% endblock content%}
